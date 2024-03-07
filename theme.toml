@@ -1,0 +1,20 @@
+name = 'Hildebrand'
+license = 'MIT'
+licenselink = 'https://github.com/selftaught/hugo-hildebrand/LICENSE'
+description = 'Hildebrand Hugo Theme'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/selftaught/hugo-hildebrand'
+
+# If you have a running demo of the theme
+# demosite = 'https://owner.github.io/repo'
+
+# Taxonomy terms
+tags = ['blog', 'company']
+features = ['some', 'awesome', 'features']
+
+# If the theme has a single author
+[author]
+  name = 'Dillan Hildebrand'
+  homepage = 'https://dillan.io'
+
