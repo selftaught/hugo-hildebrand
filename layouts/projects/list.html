@@ -2,7 +2,12 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
+    <div class="card mb-3 border-0">
+      <div class="card-body">
+        <h5 class="card-title">{{ .LinkTitle }}</h5>
+        <p class="card-text">{{ .Summary }}</p>
+        <a href="{{ .RelPermalink }}" class="card-link">View</a>
+      </div>
+    </div>
   {{ end }}
 {{ end }}
