@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <h1 class="display-6">{{ .Title }}</h1>
+  {{ $padding := "p-3" }}
+  {{ range .Pages }}
+    {{/* {{ .Params | jsonify (dict "indent" " ") }} */}}
+    <div class="row hover">
+      <div class="col-md-4 {{ $padding }}">
+        {{ with .Params.employmentFrom }}
+          {{ . }}
+        {{ end }}
+        -
+        {{ with .Params.employmentTo }}
+          {{ . }}
+        {{ end }}
+      </div>
+      <div class="col-md-8">
+        <div class="card mb-3 border-0 {{ $padding }}">
+          <div class="card-body p-0">
+            <h5 class="card-title">{{ .Params.employmentTitle }} · {{ .Params.company }}</h5>
+            <p class="card-text">{{ .Summary | truncate 200 }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{ end }}
+{{ end }}
