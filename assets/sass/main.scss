@@ -18,13 +18,22 @@ html {
         background-color: $body-bg;
     }
 
-    .card, .list-group-item {
+    .active {
+        font-weight: bold;
+    }
+
+    .card {
         background-color: transparent;
         color: $body-color;
 
         &:hover {
             background-color: $hover-color;
         }
+    }
+
+    .list-group-item {
+        background-color: transparent;
+        color: $body-color;
     }
 
     .hover:hover {
@@ -36,7 +45,13 @@ html {
         text-decoration: none;
 
         &:hover {
-            color: $hover-color
+            font-weight: bold;
+        }
+    }
+
+    .card-link {
+        &:hover {
+            font-weight: 400;
         }
     }
 }
