@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ range site.RegularPages }}
+  {{ range sort site.RegularPages "Weight" }}
     {{ if eq .Type "experience" }}
       {{ template "experience.html" . }}
     {{ end }}
