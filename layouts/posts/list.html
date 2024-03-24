@@ -1,7 +1,7 @@
 {{ define "main" }}
   <h1 class="display-6">{{ .Title }}</h1>
   {{ .Content }}
-  {{ range .Pages }}
+  {{ range .Paginator.Pages }}
     <a href="{{ .RelPermalink }}" class="card-link">
       <div class="card mb-1 border-0">
         <div class="card-body">
@@ -11,4 +11,5 @@
       </div>
     </a>
   {{ end }}
+  {{ template "pagination.html" . }}
 {{ end }}

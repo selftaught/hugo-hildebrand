@@ -1,34 +1,6 @@
 {{ define "main" }}
   <h1 class="display-6">{{ .Title }}</h1>
-  {{ $padding := "p-3" }}
-  <pre>
-  {{/* {{ .Pages | jsonify (dict "indent" " ") }} */}}
-  </pre>
   {{ range sort .Pages "Weight" }}
-    <div class="row hover rounded">
-      <div class="col-md-3 {{ $padding }}">
-        {{ with .Params.employmentFrom }}
-          {{ . }}
-        {{ end }}
-        -
-        {{ with .Params.employmentTo }}
-          {{ . }}
-        {{ end }}
-      </div>
-
-      <div class="col-md-9">
-        <div class="card mb-3 border-0 {{ $padding }}">
-          <div class="card-body p-0">
-            <h5 class="card-title">{{ .Params.employmentTitle }} · {{ .Params.company }}</h5>
-            <p class="card-text">{{ .Content }}</p>
-            {{ with .Params.Tags }}
-                {{ range . }}
-                  <span class="badge text-bg-primary rounded-pill">{{ . }}</span>
-                {{ end }}
-            {{ end }}
-          </div>
-        </div>
-      </div>
-    </div>
+    {{ template "experience.html" . }}
   {{ end }}
 {{ end }}
