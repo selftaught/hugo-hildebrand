@@ -1,6 +1,6 @@
 {{ $padding := "p-3" }}
 <div class="row hover rounded">
-    <div class="col-md-3 {{ $padding }}">
+    <div class="col-md-2 {{ $padding }}">
     {{ with .Params.employmentFrom }}
         {{ . }}
     {{ end }}
@@ -10,8 +10,8 @@
     {{ end }}
     </div>
 
-    <div class="col-md-9">
-    <div class="card mb-3 border-0 {{ $padding }}">
+    <div class="col-md-10">
+    <div class="card mb-5 border-0 {{ $padding }}">
         <div class="card-body p-0">
         <h5 class="card-title">{{ .Params.employmentTitle }} · {{ .Params.company }}</h5>
         <p class="card-text">{{ .Content }}</p>
