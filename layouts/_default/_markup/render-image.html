@@ -4,5 +4,5 @@
     {{ with $image }}
     width="{{ $image.Width }}" height="{{ $image.Height }}"
     {{ end }}
-    {{ with .Title}} style="max-width: {{ . }}; max-height: {{ . }}"{{ end }}
+    {{ with .Title }}{{ if eq . "responsive" }} class="responsive" {{ else }} style="max-width: {{ . }}; max-height: {{ . }}"{{ end }}{{ end }}
 />
