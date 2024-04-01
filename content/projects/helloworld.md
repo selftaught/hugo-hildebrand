@@ -1,8 +1,8 @@
 +++
-title = 'About'
-date = 2023-01-01T08:00:00-07:00
-draft = false
-hideDate = true
+title = 'Hello World!'
+date = "Sun Mar 31 20:25:54 PDT 2024"
+draft = true
+project = true
 +++
 
 Laborum voluptate pariatur ex culpa magna nostrud est incididunt fugiat
