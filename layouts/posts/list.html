@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <h1 class="display-6">{{ .Title }}</h1>
+  {{ range .Paginator.Pages }}
+  <div class="row">
+    <a href="{{ .RelPermalink }}" class="card-link mt-1 p-2">
+      <div class="card mb-1 border-0">
+        <div class="card-body pl-3">
+          <h5 class="card-title">{{ .LinkTitle }}</h5>
+          <div class="card-text">{{ .Summary | truncate 200 }}</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  {{ end }}
+  {{ template "pagination.html" . }}
+{{ end }}

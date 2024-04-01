@@ -1,13 +1,15 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  <h1 class="display-6">{{ .Title }}</h1>
   {{ .Content }}
-  {{ range .Pages }}
-    <div class="card mb-3 border-0">
-      <div class="card-body">
-        <h5 class="card-title">{{ .LinkTitle }}</h5>
-        <p class="card-text">{{ .Summary }}</p>
-        <a href="{{ .RelPermalink }}" class="card-link">View</a>
+  {{ range .Paginator.Pages }}
+    <a href="{{ .RelPermalink }}" class="card-link">
+      <div class="card border-0">
+        <div class="card-body">
+          <h5 class="card-title">{{ .LinkTitle }}</h5>
+          <p class="card-text">{{ .Summary | truncate 200 }}</p>
+        </div>
       </div>
-    </div>
+    </a>
   {{ end }}
+  {{ template "pagination.html" . }}
 {{ end }}

@@ -12,13 +12,6 @@
 {{- end }}
 
 
-{{/* {{- with resources.Get "js/materialize.min.js" }}
-  {{- with . | js.Build }}
-    <script src="{{ .RelPermalink }}"></script>
-  {{- end }}
-{{- end }} */}}
-
-
 {{- with resources.Get "js/boostrap.bundle.min.js" }}
   {{- with . | js.Build }}
     <script src="{{ .RelPermalink }}"></script>

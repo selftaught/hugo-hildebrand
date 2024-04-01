@@ -1,0 +1,6 @@
+{{ define "main" }}
+  <h1 class="display-6">{{ .Title }}</h1>
+  {{ range sort .Pages "Weight" }}
+    {{ template "experience.html" . }}
+  {{ end }}
+{{ end }}

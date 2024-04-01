@@ -1,1 +1,13 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+{{ with .Site.Params.socialIcons }}
+    <ul class="list-group list-group-horizontal">
+        {{ range sort . "weight" }}
+            <li class="list-group-item border-0 p-2">
+                <a href="{{ .url }}" title="{{ .name }}" target="_blank">
+                    <i class="bi {{ .icon }} fs-4"></i>
+                </a>
+            </li>
+        {{ end }}
+    </ul>
+{{ end }}
+
+{{/* <p>Copyright {{ now.Year }}. All rights reserved.</p> */}}

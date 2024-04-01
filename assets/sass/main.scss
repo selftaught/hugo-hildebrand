@@ -1,0 +1,64 @@
+@import "bootstrap";
+
+
+$body-bg: #F9F7F7;
+$body-color: #112D4E;
+
+$hover-color: #DBE2EF;
+
+
+html {
+    scrollbar-gutter: stable;
+
+    body {
+        color: $body-color;
+        height: 100%;
+        padding-right:0px !important;
+        margin-right:0px !important;
+        background-color: $body-bg;
+    }
+
+    .active {
+        font-weight: bold;
+    }
+
+    .card {
+        background-color: transparent;
+        color: $body-color;
+
+        &:hover {
+            background-color: $hover-color;
+        }
+    }
+
+    .list-group-item {
+        background-color: transparent;
+        color: $body-color;
+    }
+
+    .hover:hover {
+        background-color: $hover-color;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
+
+    .card-link {
+        &:hover {
+            font-weight: 400;
+        }
+    }
+
+    img.responsive {
+        margin: 0;
+        width: 100%;
+        height: auto;
+    }
+}
+

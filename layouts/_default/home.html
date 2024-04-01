@@ -1,7 +1,7 @@
 {{ define "main" }}
-  {{ with .Content }}{{ . }}{{ end }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
+  {{ range sort site.RegularPages "Weight" }}
+    {{ if eq .Type "experience" }}
+      {{ template "experience.html" . }}
+    {{ end }}
   {{ end }}
 {{ end }}
