@@ -1,11 +1,19 @@
 {{ define "main" }}
   <h1 class="display-6">{{ .Title }}</h1>
-  {{ .Content }}
   {{ range .Paginator.Pages }}
-    <a href="{{ .RelPermalink }}" class="card-link">
+    {{ $pageUrl := .RelPermalink }}
+    {{ with .Param "externalUrl" }}
+      {{ $pageUrl = . }}
+    {{ end }}
+    <a href="{{ $pageUrl }}" class="card-link" {{ with .Param "externalUrl" }}target="_blank"{{ end }}>
       <div class="card border-0">
         <div class="card-body">
-          <h5 class="card-title">{{ .LinkTitle }}</h5>
+          <h5 class="card-title">
+            {{ .LinkTitle }}
+            {{ with .Param "externalUrl" }}
+              <i class="bi bi-box-arrow-up-right"></i>
+            {{ end }}
+          </h5>
           <p class="card-text">{{ .Summary | truncate 200 }}</p>
         </div>
       </div>
