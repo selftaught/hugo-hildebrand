@@ -24,13 +24,13 @@ Add the theme to your hugo site by running the following command from the 'theme
 
 `hugo new content about.md`
 
-### Add a project to your portfolio
+### Add a project page or link
 
 `hugo new content projects/hello-world.md`
 
-Projects can either be a page with markdown or a link to an external page. Both require creating a project with the command above. To link to an external page, set `externalUrl` in the front-matter of the project .md file.
+Projects can either be a page with markdown or a link to an external page. Both require creating a project with the command above. To link to an external page after creating a project, set `externalUrl` in the front-matter of the project .md file.
 
-### Add a job experience to your portfolio
+### Add a job experience
 
 `hugo new content experience/company-job-title.md`
 
