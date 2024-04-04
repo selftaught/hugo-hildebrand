@@ -1,6 +1,6 @@
 # Hildebrand
 
-Hildebrand is a minimal, responsive, two-column, portfolio and blog theme for Hugo sites.
+Hildebrand is a minimal, responsive, two-column, portfolio and blog theme for [Hugo](https://gohugo.io/) sites.
 
 ## Features
 
@@ -12,22 +12,36 @@ Hildebrand is a minimal, responsive, two-column, portfolio and blog theme for Hu
 
 ## Installation
 
-Add the theme to your hugo site by running the following command from the 'themes' directory
+Add the theme to your hugo site by running the following command from the `themes` directory.
 
 `git submodule add git@github.com:selftaught/hugo-hildebrand.git`
+
+And then set theme to `hugo-hildebrand` in your configuration file.
 
 ## Configuration
 
 ### Icon links
 
-Icon links are added to the site with `[[params.socialIcons]]` entries in your hugo config. The icon is defined with `icon` and should be a valid bootstrap icon class name. Link alt titles are defined with `title` and the href is specified with `url`. Here's an example:
+Icon links are added to the site by appending `[[params.socialIcons]]` entries in your hugo config under the `[params]` section. The icon is defined with `icon` and should be a valid bootstrap icon class name. Link alt titles are defined with `title` and the href is specified with `url`. Here's an example:
 
+```toml
+[params]
+    [[params.socialIcons]]
+        icon = "bi-github"
+        title = "GitHub"
+        url = "https://github.com/selftaught"
 ```
-[[params.socialIcons]]
-    icon = "bi-github"
-    title = "GitHub"
-    url = "https://github.com/selftaught"
+
+### Menu items
+
+```toml
+[menu]
+    [[menu.main]]
+      name = "Home"
+      weight = 1
+      pageRef = "/"
 ```
+
 
 ## Content
 
@@ -52,7 +66,6 @@ Use the `weight` front-matter variable to specify the order of your experiences.
 ### Add a blog post
 
 `hugo new content posts/post-name.md`
-
 
 ## Stylesheet customization
 
