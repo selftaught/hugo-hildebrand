@@ -1,5 +1,14 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+{{ partial "meta.html" }}
+
+<title>
+{{ if .IsHome }}
+    {{ site.Title }}
+{{ else }}
+    {{ printf "%s | %s" .Title site.Title }}
+{{ end }}
+</title>
+
+<link rel="icon" type="image/x-icon" href="{{ .Site.BaseURL }}{{ with .Site.Params.favicon }}{{ . }}{{ else }}favicon.ico{{ end }}">
+
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}

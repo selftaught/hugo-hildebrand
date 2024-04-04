@@ -18,7 +18,18 @@ Add the theme to your hugo site by running the following command from the 'theme
 
 ## Configuration
 
-## Content creation
+### Icon links
+
+Icon links are added to the site with `[[params.socialIcons]]` entries in your hugo config. The icon is defined with `icon` and should be a valid bootstrap icon class name. Link alt titles are defined with `title` and the href is specified with `url`. Here's an example:
+
+```
+[[params.socialIcons]]
+    icon = "bi-github"
+    title = "GitHub"
+    url = "https://github.com/selftaught"
+```
+
+## Content
 
 ### Add an about me page
 
@@ -41,3 +52,8 @@ Use the `weight` front-matter variable to specify the order of your experiences.
 ### Add a blog post
 
 `hugo new content posts/post-name.md`
+
+
+## Stylesheet customization
+
+This theme inherits most of its styling from bootstrap sass source files. However, you can override or change the styles defined in `assets/sass/main.scss`. Hugo will recompile the scss into css when you run the server or change the file while the server is running.
