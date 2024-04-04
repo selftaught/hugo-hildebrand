@@ -7,6 +7,11 @@
         <div class="card-body">
           <h5 class="card-title">{{ .LinkTitle }}</h5>
           <p class="card-text">{{ .Summary | truncate 200 }}</p>
+          {{ with .Params.Tags }}
+              {{ range . }}
+                  <span class="badge text-bg-primary rounded-pill">{{ . }}</span>
+              {{ end }}
+          {{ end }}
         </div>
       </div>
     </a>
