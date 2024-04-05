@@ -14,7 +14,7 @@
 {{ $opts := dict
   "transpiler" "libsass"
   "targetPath" "css/style.css"
-  "includePaths" (slice "assets/bootstrap-5.0.2/scss" "assets")
+  "includePaths" (slice "assets/bootstrap-5.3.3/scss" "assets")
 }}
 {{ with resources.Get "sass/main.scss" | toCSS $opts | minify | fingerprint }}
   {{- if eq hugo.Environment "development" }}

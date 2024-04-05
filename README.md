@@ -5,6 +5,7 @@ Hildebrand is a minimal, responsive, two-column, portfolio and blog theme for [H
 ## Features
 
 - Bootstrap5 for styling
+- Dark and light modes
 - Two column layout
 - Responsive design
 - Project listing and pages
@@ -69,4 +70,4 @@ Use the `weight` front-matter variable to specify the order of your experiences.
 
 ## Stylesheet customization
 
-This theme inherits most of its styling from bootstrap sass source files. However, you can override or change the styles defined in `assets/sass/main.scss`. Hugo will recompile the scss into css when you run the server or change the file while the server is running.
+This theme inherits most of its styling from bootstrap sass source files. However, you can override or change the styles defined in `assets/sass/main.scss`. Hugo will recompile the scss into css when you run the server or change the file while the server is running. Checkout the bootstrap [sass](https://getbootstrap.com/docs/5.3/customize/sass/) and variables [here](https://getbootstrap.com/docs/5.3/utilities/colors/).
