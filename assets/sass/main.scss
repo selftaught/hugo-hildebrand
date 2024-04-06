@@ -16,16 +16,6 @@
 
     .card {
         background-color: transparent;
-
-        .card-body {
-            p {
-                // color: $subtext-color;
-            }
-        }
-
-        .card-text {
-            // color: $subtext-color;
-        }
     }
 
     .hover-bg-color:hover {
@@ -55,10 +45,6 @@ html {
 
     a {
         text-decoration: none;
-
-        &:hover {
-            font-weight: bold;
-        }
     }
 
     body {
