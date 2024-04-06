@@ -1,56 +1,76 @@
 @import "bootstrap";
 
 
-// $body-bg: #F9F7F7;
-// $body-color: #112D4E;
-
-
 // Color mode variables in _root.scss
 @include color-mode(dark) {
-    $dark-hover-color: rgba($secondary, .1);
-    $dark-subtext-color: $gray-500; //$secondary;
+    $hover-bg-color: rgba($secondary, .1);
+    $subtext-color: $gray-500;
+
+    p, li, header h5 {
+        color: $subtext-color;
+    }
+
+    .text-secondary {
+        color: $subtext-color;
+    }
+
     .card {
         background-color: transparent;
-        &:hover {
-            background-color: $dark-hover-color;
-        }
 
         .card-body {
             p {
-                color: $dark-subtext-color;
+                // color: $subtext-color;
             }
         }
 
         .card-text {
-            color: $dark-subtext-color
+            // color: $subtext-color;
         }
     }
 
-    p, li, header h5 {
-        color: $dark-subtext-color;
+    .hover-bg-color:hover {
+        background-color: $hover-bg-color;
+        box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+        cursor: pointer;
     }
 }
 
 
 @include color-mode(light) {
-    $light-hover-color: #DBE2EF;
+    $hover-bg-color: #DBE2EF;
+
     .card {
         background-color: transparent;
-        &:hover {
-            background-color: $light-hover-color;
-        }
+    }
+
+    .hover-bg-color:hover {
+        background-color: $hover-bg-color;
+        box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.1);
+        cursor: pointer;
     }
 }
 
 html {
     scrollbar-gutter: stable;
 
+    a {
+        text-decoration: none;
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
+
     body {
-        // color: $body-color;
         height: 100%;
         padding-right:0px !important;
         margin-right:0px !important;
-        // background-color: $body-bg;
+    }
+
+    img.responsive {
+        margin: 0;
+        width: 100%;
+        height: auto;
     }
 
     .active {
@@ -61,35 +81,19 @@ html {
         cursor: pointer;
     }
 
-
-    .list-group-item {
-        background-color: transparent;
-        color: $body-color;
-    }
-
-    .hover:hover {
-        // background-color: $hover-color;
-        cursor: pointer;
-    }
-
-    a {
-        text-decoration: none;
-
-        &:hover {
-            font-weight: bold;
-        }
-    }
-
     .card-link {
         &:hover {
             font-weight: 400;
         }
     }
 
-    img.responsive {
-        margin: 0;
-        width: 100%;
-        height: auto;
+    .font-size-pt85-rem {
+        font-size: 0.85rem;
+    }
+
+    .list-group-item {
+        background-color: transparent;
+        color: $body-color;
     }
 }
 

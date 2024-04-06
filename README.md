@@ -4,8 +4,8 @@ Hildebrand is a minimal, responsive, two-column, portfolio and blog theme for [H
 
 ## Features
 
-- Bootstrap5 for styling
-- Dark and light modes
+- Bootstrap5
+- Dark and light theme
 - Two column layout
 - Responsive design
 - Project listing and pages
