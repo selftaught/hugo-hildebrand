@@ -1,4 +1,8 @@
 {{ $padding := "p-3" }}
+{{ $displayExperienceFavicons := false }}
+{{ with .Site.Params.displayExperienceFavicons }}
+    {{ $displayExperienceFavicons = . }}
+{{ end }}
 <div class="row hover-bg-color rounded">
     <div class="col-md-2 {{ $padding }} font-size-pt85-rem">
     {{ with .Params.employmentFrom }}
@@ -13,7 +17,22 @@
     <div class="col-md-10">
         <div class="card mb-2 border-0 {{ $padding }}">
             <div class="card-body p-0">
-                <h5 class="card-title">{{ .Params.employmentTitle }} · {{ .Params.company }}</h5>
+                <h5 class="card-title">
+                    {{ .Params.employmentTitle }} · {{ .Params.company }}
+                    {{ if $displayExperienceFavicons }}
+                        {{ $favicon := "" }}
+                        {{ with .Params.companyFavicon }}
+                            {{ $favicon = . }}
+                        {{ else }}
+                            {{ if .Params.companyUrl }}
+                            {{ $favicon = printf "%s/favicon.ico" .Params.companyUrl }}
+                            {{ end }}
+                        {{ end }}
+                        {{ if $favicon }}
+                            <img src="{{ $favicon }}" width="16" height="16" />
+                        {{ end }}
+                    {{ end }}
+                </h5>
                 <p class="card-text">{{ .Content }}</p>
                 {{ with .Params.Tags }}
                     {{ range . }}

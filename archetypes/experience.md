@@ -4,5 +4,7 @@ employmentFrom = ""
 employmentTo = ""
 employmentTitle = ""
 company = ""
+companyUrl = ""
+companyFavicon = ""
 +++
 

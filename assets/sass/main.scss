@@ -1,7 +1,6 @@
 @import "bootstrap";
 
 
-// Color mode variables in _root.scss
 @include color-mode(dark) {
     $hover-bg-color: rgba($secondary, .1);
     $subtext-color: $gray-500;
