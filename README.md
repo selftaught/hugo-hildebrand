@@ -17,13 +17,13 @@ Add the theme to your hugo site by running the following command from the `theme
 
 `git submodule add git@github.com:selftaught/hugo-hildebrand.git`
 
-And then set theme to `hugo-hildebrand` in your configuration file.
+And then set `theme = hugo-hildebrand` in your configuration file.
 
 ## Configuration
 
 ### Site title & subtitle
 
-The site title & subtitle display on the left hand side of site in the first column. They stack on top of each other.
+The site title & subtitle display on the left hand side of the site in the first column.
 
 ```toml
 title = 'Dillan Hildebrand'
@@ -34,14 +34,18 @@ subtitle = 'Senior Software Engineer'
 
 ### Social icon links
 
-Add social icon links by adding `[[params.socialIcons]]` entries to your hugo config. The icon value should be a valid bootstrap icon class name. Anchor alt attributes are defined with `title` and the href is defined with `url`.
+Add social icon links to your site by adding `[[params.socialIcons]]` entries to your hugo config.
 
 ```toml
 [[params.socialIcons]]
-    icon = "bi-github"
+    class = "bi-github"
     title = "GitHub"
-    url = "https://github.com/selftaught"
+    href = "https://github.com/selftaught"
 ```
+
+- `class` - [bootstrap icon](https://icons.getbootstrap.com/) class name
+- `title` - tooltip text to display when the icon is hovered over (optional)
+- `href` - link to page
 
 ### Menu items
 
@@ -69,7 +73,11 @@ Add social icon links by adding `[[params.socialIcons]]` entries to your hugo co
 
 ### Pagination
 
-The blog post and project lists have pagination. The default page length set by hugo is 10. You can override the default by defining `paginate = 5` in your config.
+The blog post and project lists have pagination. The default page length is 10. You can override the default by defining `paginate` in your config. If you'd like to know more about how pagination works in Hugo, head [here](https://gohugo.io/templates/pagination/).
+
+```toml
+paginate = 5
+```
 
 ## Content
 
@@ -81,15 +89,15 @@ The blog post and project lists have pagination. The default page length set by 
 
 `hugo new content projects/hello-world.md`
 
-Projects can either be a page with markdown or a link to an external page. Both require creating a project with the command above. To link to an external page after creating a project, set `externalUrl` in the front-matter of the project .md file.
+Projects can either be a page with markdown or a link to an external page. To link to an external page after creating a project, set `externalUrl` in the front-matter of the project .md file.
 
 ### Job experiences
 
 `hugo new content experience/company-job-title.md`
 
-#### front-matter
+#### front matter
 
-In the newly created job experience md file, you'll find the following front-matter variables which you'll want to set:
+In the newly created job experience md file, you'll find the following front matter variables to set:
 
 - `company` (str) - Company name.
 - `companyUrl` (str) - Company website url.
@@ -103,6 +111,8 @@ In the newly created job experience md file, you'll find the following front-mat
 ### Blog posts
 
 `hugo new content posts/post-name.md`
+
+Blog posts are created as drafts, by default. When you finish writing the post and its production ready.. Set `draft = false` in the front matter of the post.
 
 ## Stylesheet customization
 

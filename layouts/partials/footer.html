@@ -2,8 +2,8 @@
     <ul class="list-group list-group-horizontal">
         {{ range sort . "weight" }}
             <li class="list-group-item border-0 p-0 me-3">
-                <a href="{{ .url }}" title="{{ .title }}" target="_blank">
-                    <i class="bi {{ .icon }} fs-4"></i>
+                <a href="{{ .href }}" title="{{ .title }}" target="_blank">
+                    <i class="bi {{ .class }} fs-4"></i>
                 </a>
             </li>
         {{ end }}
