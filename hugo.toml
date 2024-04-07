@@ -6,7 +6,7 @@ title = "John Doe"
 [params]
 author = "John Doe"
 copyright = "John Doe"
-description = 'Senior Software Engineer'
+subtitle = 'Senior Software Engineer'
 
   [[params.socialIcons]]
     icon = "bi-linkedin"

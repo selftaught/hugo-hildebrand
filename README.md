@@ -21,28 +21,55 @@ And then set theme to `hugo-hildebrand` in your configuration file.
 
 ## Configuration
 
-### Icon links
+### Site title & subtitle
 
-Icon links are added to the site by appending `[[params.socialIcons]]` entries in your hugo config under the `[params]` section. The icon value should be a valid bootstrap icon class name. Link alt titles are defined with `title` and the href is specified with `url`. Here's an example:
+The site title & subtitle display on the left hand side of site in the first column. They stack on top of each other.
 
 ```toml
+title = 'Dillan Hildebrand'
+
 [params]
-    [[params.socialIcons]]
-        icon = "bi-github"
-        title = "GitHub"
-        url = "https://github.com/selftaught"
+subtitle = 'Senior Software Engineer'
+```
+
+### Social icon links
+
+Add social icon links by adding `[[params.socialIcons]]` entries to your hugo config. The icon value should be a valid bootstrap icon class name. Anchor alt attributes are defined with `title` and the href is defined with `url`.
+
+```toml
+[[params.socialIcons]]
+    icon = "bi-github"
+    title = "GitHub"
+    url = "https://github.com/selftaught"
 ```
 
 ### Menu items
 
 ```toml
-[menu]
-    [[menu.main]]
-      name = "Home"
-      weight = 1
-      pageRef = "/"
+[[menu.main]]
+    name = "Home"
+    weight = 1
+    pageRef = "/"
+
+[[menu.main]]
+    name = "About"
+    weight = 100
+    pageRef = "/about"
+
+[[menu.main]]
+    name = "Posts"
+    weight = 200
+    pageRef = "/posts"
+
+[[menu.main]]
+    name = "Projects"
+    weight = 300
+    pageRef = "/projects"
 ```
 
+### Pagination
+
+The blog post and project lists have pagination. The default page length set by hugo is 10. You can override the default by defining `paginate = 5` in your config.
 
 ## Content
 
