@@ -5,11 +5,11 @@
 {{ end }}
 <div class="row hover-bg-color rounded">
     <div class="col-md-2 {{ $padding }} font-size-pt85-rem">
-    {{ with .Params.employmentFrom }}
+    {{ with .Params.jobStart }}
         {{ . }}
     {{ end }}
     -
-    {{ with .Params.employmentTo }}
+    {{ with .Params.jobEnd }}
         {{ . }}
     {{ end }}
     </div>
@@ -18,7 +18,8 @@
         <div class="card mb-2 border-0 {{ $padding }}">
             <div class="card-body p-0">
                 <h5 class="card-title">
-                    {{ .Params.employmentTitle }} · {{ .Params.company }}
+                    <div class="align-middle">
+                    {{ .Params.jobTitle }} · {{ .Params.company }}
                     {{ if $displayExperienceFavicons }}
                         {{ $favicon := "" }}
                         {{ with .Params.companyFavicon }}
@@ -29,9 +30,10 @@
                             {{ end }}
                         {{ end }}
                         {{ if $favicon }}
-                            <img src="{{ $favicon }}" width="16" height="16" />
+                            <img src="{{ $favicon }}" width="16" height="16" class="mb-1" />
                         {{ end }}
                     {{ end }}
+                    </div>
                 </h5>
                 <p class="card-text">{{ .Content }}</p>
                 {{ with .Params.Tags }}

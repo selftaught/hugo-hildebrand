@@ -1,10 +1,11 @@
 +++
-title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-employmentFrom = ""
-employmentTo = ""
-employmentTitle = ""
 company = ""
 companyUrl = ""
 companyFavicon = ""
+jobStart = ""
+jobEnd = ""
+jobTitle = ""
+tags = []
+weight = 1
 +++
 
