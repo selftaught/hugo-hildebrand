@@ -9,15 +9,30 @@ For a given taxonomy, renders a list of terms assigned to the page.
 
 {{- $page := .page }}
 {{- $taxonomy := .taxonomy }}
+{{/* {{- $taxColors :=
+  dict
+    "Perl" "text-bg-secondary"
+    "Python3" "text-bg-danger"
+}} */}}
+{{- $taxColors := dict }}
+
+{{/* <pre>
+{{ $taxColors | jsonify (dict "indent" " ") }}
+</pre> */}}
 
 {{- with $page.GetTerms $taxonomy }}
   {{- $label := (index . 0).Parent.LinkTitle }}
   <div>
-    <div>
-      {{ $label }}:
-      {{- range . }}
-        <a href="{{ .RelPermalink }}" class="badge text-bg-primary rounded-pill">{{ .LinkTitle }}</a>
-      {{- end }}
-    </div>
+    {{ $label }}:
+    {{- range . }}
+      {{ $linkTitle := .LinkTitle }}
+      {{ $colorClass := "text-bg-primary" }}
+      {{ with $taxColors }}
+        {{ if index . $linkTitle }}
+          {{ $colorClass = index $taxColors $linkTitle }}
+        {{ end }}
+      {{ end }}
+      <a href="{{ .RelPermalink }}" class="badge {{ $colorClass }} rounded-pill">{{ .LinkTitle }}</a>
+    {{- end }}
   </div>
 {{- end }}

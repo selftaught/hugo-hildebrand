@@ -1,5 +1,5 @@
 {{ with .Site.Params.socialIcons }}
-    <ul class="list-group list-group-horizontal">
+    <ul class="list-group list-group-horizontal mt-5">
         {{ range sort . "weight" }}
             <li class="list-group-item border-0 p-0 me-3">
                 <a href="{{ .href }}" title="{{ .title }}" target="_blank">
@@ -9,5 +9,3 @@
         {{ end }}
     </ul>
 {{ end }}
-
-{{/* <p>Copyright {{ now.Year }}. All rights reserved.</p> */}}
