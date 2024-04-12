@@ -100,10 +100,10 @@ Projects can either be a page with markdown or a link to an external page. To li
 In the newly created job experience md file, you'll find the following front matter variables to set:
 
 - `company` (str) - Company name.
-- `companyUrl` (str) - Company website url.
 - `companyFavicon` (str) - Company website favicon url. If favicons are enabled and this value is empty, the favicon will be loaded using the url.
-- `jobStart` (str) - Job start year and or month.
+- `companyUrl` (str) - Company website url.
 - `jobEnd` (str) - Job end year and or month.
+- `jobStart` (str) - Job start year and or month.
 - `jobTitle` (str) - Job title.
 - `tags` (array) - Tags that are displayed as badges under the experience content. This can be used to display skills, used technology, or other things.
 - `weight` (int) - Used to control the order of experiences. Lower weight floats to the top, greater weight sinks to the bottom.
