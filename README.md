@@ -117,3 +117,30 @@ Blog posts are created as drafts, by default. When you finish writing the post a
 ## Stylesheet customization
 
 This theme inherits most of its styling from bootstrap sass source files. However, you can override or change the styles defined in `assets/sass/main.scss`. Hugo will recompile the scss into css when you run the server or change the file while the server is running. Checkout the bootstrap [sass](https://getbootstrap.com/docs/5.3/customize/sass/) and variables [here](https://getbootstrap.com/docs/5.3/utilities/colors/).
+
+## Shortcodes
+
+### Carousel
+
+```html
+{{<carousel id="myCarousel">}}
+```
+
+Specify the carousel images using page front matter:
+
+```toml
+[[carousel]]
+    id="uniqueCarouselId"
+
+    [[carousel.images]]
+        url = "https://example.com/photo1.png"
+        alt = ""
+        label = ""
+        description = ""
+
+    [[carousel.images]]
+        url = "https://example.com/photo2.png"
+        alt = ""
+        label = ""
+        description = ""
+```

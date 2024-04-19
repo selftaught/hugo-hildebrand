@@ -58,10 +58,6 @@ html {
         height: auto;
     }
 
-    .active {
-        // font-weight: bold;
-    }
-
     .badge:hover {
         cursor: pointer;
     }
@@ -80,4 +76,25 @@ html {
         background-color: transparent;
         color: $body-color;
     }
+
+    #dark-theme-icon {
+        color: rgba($secondary, .5);
+        &:hover {
+            color: rgba($warning, 1);
+        }
+    }
+
+    #light-theme-icon {
+        color: rgba($secondary, .5);
+        &:hover {
+            color: $dark;
+        }
+    }
+
+    #theme-switcher {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+    }
 }
+

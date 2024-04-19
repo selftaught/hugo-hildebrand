@@ -12,7 +12,7 @@
 {{- end }}
 
 
-{{- with resources.Get "js/boostrap.bundle.min.js" }}
+{{- with resources.Get "js/bootstrap.bundle.min.js" }}
   {{- with . | js.Build }}
     <script src="{{ .RelPermalink }}"></script>
   {{- end }}
