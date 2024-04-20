@@ -23,10 +23,12 @@
             {{ $image := false }}
             {{ if hasPrefix $url "http" }}
               {{ $image = resources.GetRemote $url }}
+              {{ $image := $image.Process "resize x500" }}
             {{ else }}
               {{ $image = resources.Get $url }}
             {{ end }}
-            {{ $image := $image.Process "resize x500" }}
+
+            {{ if ne nil $image }}
             <div class="carousel-item {{ if eq $idx 0 }}active{{ end }}">
               <img src="{{ $image.RelPermalink }}" class="d-block mx-auto img-fluid" alt="{{ with .alt }}{{ . }}{{ end }}">
               <div class="carousel-caption d-none d-md-block">
@@ -38,6 +40,7 @@
                 {{ end }}
               </div>
             </div>
+            {{ end }}
             {{ $idx = add $idx 1 }}
           {{ end }}
         {{ end }}
