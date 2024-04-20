@@ -1,5 +1,5 @@
 {{ $carouselID := $.Params.id }}
-<div id="{{ $carouselID }}" class="carousel slide" data-bs-ride="carousel">
+<div id="{{ $carouselID }}" class="carousel slide mt-3 mb-3">
   <div class="carousel-indicators">
     {{ with $.Page.Params }}
       {{ range .Carousel }}
@@ -13,7 +13,7 @@
       {{ end }}
     {{ end }}
   </div>
-  <div class="carousel-inner m-2">
+  <div class="carousel-inner">
     {{ with $.Page.Params }}
       {{ range .Carousel }}
         {{ if eq .id $.Params.id }}
@@ -26,9 +26,9 @@
             {{ else }}
               {{ $image = resources.Get $url }}
             {{ end }}
-            {{ $image := $image.Process "resize x400" }}
+            {{ $image := $image.Process "resize x500" }}
             <div class="carousel-item {{ if eq $idx 0 }}active{{ end }}">
-              <img src="{{ $image.RelPermalink }}" class="d-block mx-auto" alt="{{ with .alt }}{{ . }}{{ end }}">
+              <img src="{{ $image.RelPermalink }}" class="d-block mx-auto img-fluid" alt="{{ with .alt }}{{ . }}{{ end }}">
               <div class="carousel-caption d-none d-md-block">
                 {{ with .label }}
                   <h5>{{ . }}</h5>
