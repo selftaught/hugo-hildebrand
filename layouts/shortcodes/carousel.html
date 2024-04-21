@@ -23,6 +23,7 @@
             {{ $image := false }}
             {{ if hasPrefix $url "http" }}
               {{ $image = resources.GetRemote $url }}
+              {{/* NOTE: image.Process is available starting with hugo 0.119. CloudFlare uses 0.118 so this doesn't work, yet. */}}
               {{ $image := $image.Process "resize x500" }}
             {{ else }}
               {{ $image = resources.Get $url }}
